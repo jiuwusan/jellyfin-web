@@ -159,12 +159,12 @@ function updateUserInHeader(user) {
         const policy = user.Policy ? user.Policy : user.localUser.Policy;
 
         if (
-        // Button is present
+            // Button is present
             headerSyncButton
-                // SyncPlay plugin is loaded
-                && pluginManager.ofType(PluginType.SyncPlay).length > 0
-                // SyncPlay enabled for user
-                && policy?.SyncPlayAccess !== 'None'
+            // SyncPlay plugin is loaded
+            && pluginManager.ofType(PluginType.SyncPlay).length > 0
+            // SyncPlay enabled for user
+            && policy?.SyncPlayAccess !== 'None'
         ) {
             headerSyncButton.classList.remove('hide');
         }
@@ -194,7 +194,7 @@ function updateHeaderUserButton(src) {
 function updateClock() {
     if (layoutManager.tv) {
         currentTimeText.classList.remove('hide');
-        setInterval(function() {
+        setInterval(function () {
             currentTimeText.innerText = datetime.getDisplayTime(new Date());
         }, 1000);
     } else {
@@ -719,6 +719,14 @@ function updateLibraryMenu(user) {
     if (libraryMenuOptions) {
         getUserViews(apiClient, userId).then(function (result) {
             const items = result;
+
+            items.push({
+                icon:'search',
+                Id:'pt-media-search',
+                url:'#/pt-media-search.html',
+                Name:'在线更新'
+            })
+
             let html = `<h3 class="sidebarHeader">${globalize.translate('HeaderMedia')}</h3>`;
             html += items.map(function (i) {
                 const icon = i.icon || imageHelper.getLibraryIcon(i.CollectionType);
@@ -729,6 +737,7 @@ function updateLibraryMenu(user) {
                                     <span class="sectionName navMenuOptionText">${escapeHtml(i.Name)}</span>
                                   </a>`;
             }).join('');
+
             libraryMenuOptions.innerHTML = html;
             const elem = libraryMenuOptions;
             const sidebarLinks = elem.querySelectorAll('.navMenuOption');
@@ -959,7 +968,7 @@ const enableLibraryNavDrawerHome = !layoutManager.tv;
 const skinHeader = document.querySelector('.skinHeader');
 let requiresUserRefresh = true;
 
-function setTabs (type, selectedIndex, builder) {
+function setTabs(type, selectedIndex, builder) {
     import('../components/maintabsmanager').then((mainTabsManager) => {
         if (type) {
             mainTabsManager.setTabs(viewManager.currentView(), selectedIndex, builder, function () {
@@ -971,7 +980,7 @@ function setTabs (type, selectedIndex, builder) {
     });
 }
 
-function setDefaultTitle () {
+function setDefaultTitle() {
     if (!pageTitleElement) {
         pageTitleElement = document.querySelector('.pageTitle');
     }
@@ -986,7 +995,7 @@ function setDefaultTitle () {
     document.title = 'Jellyfin';
 }
 
-function setTitle (title) {
+function setTitle(title) {
     if (title == null) {
         LibraryMenu.setDefaultTitle();
         return;
@@ -1012,7 +1021,7 @@ function setTitle (title) {
     document.title = title || 'Jellyfin';
 }
 
-function setTransparentMenu (transparent) {
+function setTransparentMenu(transparent) {
     if (transparent) {
         skinHeader.classList.add('semiTransparent');
     } else {

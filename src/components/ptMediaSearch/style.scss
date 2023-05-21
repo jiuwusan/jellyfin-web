@@ -1,0 +1,275 @@
+.pt-default-button {
+    background: transparent;
+    border: 1px solid #d9d9d9;
+    padding: 4px 6px;
+    border-radius: 6px;
+    box-shadow: 0 2px 0 rgba(5,145,255,.1);
+    cursor: pointer;
+}
+
+.pt-btn-loading {
+    width: 12px;
+    height: 12px;
+    display: inline;
+    margin-right: 4px;
+    animation: ui-loading 1.5s linear infinite;
+}
+
+.pt-page-box {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-top: 50px;
+}
+
+.pt-seach-box {
+    width: 100%;
+    min-height: 90px;
+    box-sizing: border-box;
+}
+
+.pt-seach-box-fixed {
+    margin: 0 auto;
+    width: calc(100% - 30px);
+    max-width: 1150px;
+    height: 50px;
+    top: 20px;
+    background: #FFFFFF;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+.pt-seach-input {
+    display: flex;
+    flex-grow: 1;
+    display: inline-flex;
+    margin-right: 10px;
+    border: 1px solid #d9d9d9;
+    padding: 6px 11px;
+    border-radius: 4px;
+    outline: none;
+    color: rgba(0, 0, 0, .88);
+    font-size: 14px;
+}
+
+.pt-seach-input:focus {
+    border: 1px solid #4096ff;
+}
+
+.pt-search-btn {
+    padding: 6px 12px !important;
+    color: #fff;
+    background-color: #1677ff !important;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    vertical-align: middle;
+}
+
+.torrent-list {
+    width: 100%;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.torrent-list::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    color: transparent;
+    display: none
+}
+
+.torrent-list-body {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.torrent-item {
+    display: flex;
+    float: left;
+    width: calc(100% - 30px);
+    height: 200px;
+    background-color: #FFFFFF;
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+}
+
+@media screen and (min-width:440px) and (max-width:1024px) {
+    .torrent-list-body {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: flex-start;
+    }
+
+    .torrent-item {
+        width: calc(50% - 22.5px);
+        margin-left: 15px;
+    }
+}
+
+@media screen and (min-width:1025px) and (max-width:1180px) {
+
+    .torrent-list-body {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: flex-start;
+    }
+
+    .torrent-item {
+        width: calc(33.33% - 20px);
+        margin-left: 15px;
+    }
+}
+
+@media screen and (min-width:1181px) {
+    .torrent-list-body {
+        margin: 0 auto;
+        max-width: 1200px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: flex-start;
+    }
+
+    .torrent-item {
+        width: 384px;
+        margin-left: 15px;
+    }
+}
+
+.torrent-poster {
+    width: 130px;
+    height: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.torrent-info {
+    margin-left: 20px;
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+}
+
+.torrent-info-row {
+    margin-top: 8px;
+    font-size: 14px;
+}
+
+.torrent-info-title {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.torrent-label-list {
+    line-height: 25px;
+}
+
+.torrent-label {
+    padding: 2px 4px;
+    font-size: 12px;
+    line-height: 1;
+    color: #389e0d;
+    background: #f6ffed;
+    border: 1px solid #b7eb8f;
+    margin: 0px 4px 0px 0;
+    border-radius: 4px;
+}
+
+.torrent-label:nth-child(2) {
+    color: #d48806;
+    background: #fffbe6;
+    border: 1px solid #ffe58f;
+}
+
+.torrent-label:nth-child(3) {
+    color: #08979c;
+    background: #e6fffb;
+    border: 1px solid #87e8de;
+}
+
+.torrent-label:nth-child(4) {
+    color: #0958d9;
+    background: #e6f4ff;
+    border: 1px solid #91caff;
+}
+
+.torrent-label:nth-child(5) {
+    color: #531dab;
+    background: #f9f0ff;
+    border: 1px solid #d3adf7;
+}
+
+.torrent-label:nth-child(6) {
+    color: #cf1322;
+    background: #fff1f0;
+    border: 1px solid #ffa39e;
+}
+
+.torrent-label:nth-child(7) {
+    color: #c41d7f;
+    background: #fff0f6;
+    border: 1px solid #ffadd2;
+}
+
+.torrent-label:nth-child(8) {
+    color: #d46b08;
+    background: #fff7e6;
+    border: 1px solid #ffd591;
+}
+
+.torrent-option {
+    margin-right: 8px;
+    background: #1677ff !important;
+    border: 1px solid #1677ff !important;
+    color: #FFFFFF !important;
+}
+
+.torrent-option:last-child {
+    background: rgb(45, 183, 245) !important;
+    border: 1px solid rgb(45, 183, 245) !important;
+}
+
+.torrent-source-HDSky {
+    padding: 2px 4px;
+    font-size: 12px;
+    color: #FFFFFF;
+    background-color: rgb(255, 85, 0);
+    margin-left: 5px;
+    border-radius: 4px;
+}
+
+.torrent-source-MTeam {
+    padding: 2px 4px;
+    font-size: 12px;
+    color: #FFFFFF;
+    background-color: #d48806;
+    margin-left: 5px;
+    border-radius: 4px;
+}
+
+.torrent-source-HDFans {
+    padding: 2px 4px;
+    font-size: 12px;
+    color: #FFFFFF;
+    background-color: rgb(45, 183, 245);
+    margin-left: 5px;
+    border-radius: 4px;
+}
+
+.torrent-source-PTTime {
+    padding: 2px 4px;
+    font-size: 12px;
+    color: #FFFFFF;
+    background-color: rgb(16, 142, 233);
+    margin-left: 5px;
+    border-radius: 4px;
+}
